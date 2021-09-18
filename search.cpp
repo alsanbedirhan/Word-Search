@@ -26,23 +26,23 @@ void arama(string deneme)
     {
         for (i = 0; i < deneme.length(); i++)
         {
-            s1[i] = deneme[i];//karakter karakter alýyoruz
+            s1[i] = deneme[i];//karakter karakter alÄ±yoruz
         }
         while (getline(dosyaOku, deneme2))
         {
             for (int l = 0; l < deneme2.length(); l++)
             {
-                s2[l] = deneme2[l];//karakter karakter alýyoruz
+                s2[l] = deneme2[l];//karakter karakter alÄ±yoruz
             }
             l1 = deneme.length();
             l2 = deneme2.length();
             for (i = 0; i <= l1; i++)
             {
-                dist[0][i] = i;//matris oluþturuyoruz algoritma gereði
+                dist[0][i] = i;//matris oluÅŸturuyoruz algoritma gereÄŸi
             }
             for (j = 0; j <= l2; j++)
             {
-                dist[j][0] = j;//matris oluþturuyoruz algoritma gereði
+                dist[j][0] = j;//matris oluÅŸturuyoruz algoritma gereÄŸi
             }
             for (j = 1; j <= l1; j++)
             {
@@ -60,12 +60,12 @@ void arama(string deneme)
                     dist[i][j] = MIN(t, (dist[i - 1][j - 1] + track));
                 }
             }
-            if (dist[l2][l1] < 2)//uzaklýðý 2'den küçük olanlarý alýyoruz
+            if (dist[l2][l1] < 2)//uzaklÄ±ÄŸÄ± 2'den kÃ¼Ã§Ã¼k olanlarÄ± alÄ±yoruz
             {
-                if (dist[l2][l1] == 0)//eðer 0'a eþit olursa kelime bulunmuþ demektir
+                if (dist[l2][l1] == 0)//eÄŸer 0'a eÅŸit olursa kelime bulunmuÅŸ demektir
                 {
                     deger++;
-                    break;//aranýlan kelime bulunduðu için ve dosyamýz da sözlük olduðundan burada kesmek mantýklý olur çünkü zaten ayný kelimeden sözlükte baþka olmaz istersek kaldýrabiliriz ve komple hepsinde aramasýný saðlayabiliriz 
+                    break;//aranÄ±lan kelime bulunduÄŸu iÃ§in ve dosyamÄ±z da sÃ¶zlÃ¼k olduÄŸundan burada kesmek mantÄ±klÄ± olur Ã§Ã¼nkÃ¼ zaten aynÄ± kelimeden sÃ¶zlÃ¼kte baÅŸka olmaz istersek kaldÄ±rabiliriz ve komple hepsinde aramasÄ±nÄ± saÄŸlayabiliriz 
                 }
                 else
                 {
@@ -91,10 +91,10 @@ void arama(string deneme)
             }
             for (int l = 0; l < 50; l++)
             {
-                s2[l] = 0;//eðer aktardýklarýmýzý silmezsek kelime uzunluðu farkýndan sorunlar oluþabilir
+                s2[l] = 0;//eÄŸer aktardÄ±klarÄ±mÄ±zÄ± silmezsek kelime uzunluÄŸu farkÄ±ndan sorunlar oluÅŸabilir
             }
         }
-        if (deger == 0)//eðer deðer 0'a eþitse hiç ayný kelimeden yok demektir 
+        if (deger == 0)//eÄŸer deÄŸer 0'a eÅŸitse hiÃ§ aynÄ± kelimeden yok demektir 
         {
             
             if(r == NULL)
@@ -102,24 +102,24 @@ void arama(string deneme)
             cout << "aradiginiz bulunamadi" << endl;
             int bitir = clock();
             cout << "islem suresi: " << (float)(bitir - basla) / CLOCKS_PER_SEC << " saniye" << endl;
-			}
-			else
-			{
-				ofstream dosyanin("bir.txt");
-				while (r != NULL)
+	    }
+	    else
+	    {
+		ofstream dosyanin("bir.txt");
+		cout << "bunu mu demek istediniz" << endl;
+		while (r != NULL)
                 {
-                dosyanin << r->data << endl;//çýkan deðerleri baþka bir txt ye kaydediyoruz
+                dosyanin << r->data << endl;//Ã§Ä±kan deÄŸerleri baÅŸka bir txt ye kaydediyoruz
                 cout << r->data << endl;
                 r = r->next;
-                }
-                cout << "bunu mu demek istediniz" << endl;
+                }               
                 int bitir = clock();
                 cout << "islem suresi: " << (float)(bitir - basla) / CLOCKS_PER_SEC << " saniye" << endl;
             	dosyanin << "islem suresi: " << (float)(bitir - basla) / CLOCKS_PER_SEC << " saniye" << endl;
             	cout << "sonuclar txt basilmistir" << endl;
             	dosyanin.close();
-            	system("start bir.txt");//sonuçlarý yazýlý olan txt'yi açmak için
-			}
+            	system("start bir.txt");//sonuÃ§larÄ± yazÄ±lÄ± olan txt'yi aÃ§mak iÃ§in
+	      }
         }
         else
         {
@@ -132,7 +132,7 @@ void arama(string deneme)
             dosyanin << "islem suresi: " << (float)(bitir - basla) / CLOCKS_PER_SEC << " saniye" << endl;
             dosyanin.close();
             cout << "sonuclar txt basilmistir" << endl;
-            system("start bir.txt");//sonuÃ§larÄ± yazÄ±lan txt dosyasini ekrana Ã§Ä±karÄ±r
+            system("start bir.txt");//sonuÃƒÂ§larÃ„Â± yazÃ„Â±lan txt dosyasini ekrana ÃƒÂ§Ã„Â±karÃ„Â±r
         }
         dosyaOku.close();
     }
